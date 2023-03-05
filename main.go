@@ -12,7 +12,6 @@ import (
 func main() {
     // specify the URL of the file to download
     urlFlag := flag.String("u", "", "URL of the file to download")
-    folderFlag := flag.String("f", "", "path to the folder where the file should be saved")
 
 
 
@@ -35,7 +34,7 @@ func main() {
 
 
     // extract the file name from the URL
-    fileName := filepath.Base(url)
+    fileName := filepath.Base(*urlFlag)
 
     // create the file to save the download
     filePath := filepath.Join(folderPath, fileName)
@@ -47,7 +46,7 @@ func main() {
     defer file.Close()
 
     // download the file
-    response, err := http.Get(url)
+    response, err := http.Get(*urlFlag)
     if err != nil {
         fmt.Println(err)
         return

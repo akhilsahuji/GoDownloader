@@ -1,4 +1,4 @@
-# GoDownloader
+# ⌯GoDownloader
 
 GoDownloader is a simple downloader written in Golang.
 
